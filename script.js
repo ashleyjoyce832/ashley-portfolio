@@ -146,3 +146,17 @@ if (heroName) {
     typeNext();
   }
 }
+
+/* Deep links: re-scroll to the hash once late-loading media has settled,
+   so a cold visit to /#influencer lands on the right block. */
+(function () {
+  function scrollToHash() {
+    if (!window.location.hash) return;
+    var el = document.getElementById(window.location.hash.slice(1));
+    if (el) el.scrollIntoView();
+  }
+  window.addEventListener('load', function () {
+    scrollToHash();
+    setTimeout(scrollToHash, 250);
+  });
+})();
