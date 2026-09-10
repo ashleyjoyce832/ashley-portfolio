@@ -1390,3 +1390,8 @@ video.phone-slide { object-fit: cover; background: var(--ink); }
 }
 .doc-links a:hover { border-bottom-color: var(--ink); }
 .roxo-brochure figcaption a { color: var(--ink); border-bottom: 1px solid var(--border-dark); font-style: normal; }
+
+/* Influencer tiles use the same phone frame as the Chi Omega carousel, sized to
+   the grid column instead of the carousel's fixed 260px. */
+.influencer-grid .phone-frame { width: 100%; flex: none; max-width: 215px; margin: 0 auto; }
+.influencer-grid figure > .phone-frame + figcaption { margin-top: 0.7rem; }
