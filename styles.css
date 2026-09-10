@@ -1,0 +1,1392 @@
+/* ============================
+   Ashley Joyce Portfolio
+   Palette/type matched to the Clean Beauty Research site
+   ============================ */
+
+:root {
+  --cream:        #FDFAF6;
+  --cream-dark:   #F5F1EB;
+  --cream-mid:    #EDE9E2;
+  --white:        #FFFFFF;
+
+  --ink:          #1E1C1A;
+  --ink-mid:      #5A5450;
+  --ink-light:    #A8A09A;
+
+  --accent:       #6B5A4E;
+  --accent-light: #F2EDE8;
+
+  --border:       #E8E2D8;
+  --border-dark:  #D4CEC4;
+
+  --rose:         #D4A5A0;
+  --rose-light:   #FBF4F3;
+  --mauve:        #B08A8A;
+  --mauve-light:  #F8F2F2;
+  --blush:        #F2DDD8;
+
+  --max-width: 1200px;
+  font-size: 16px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+/* Safety net: no image or video can ever push the page wider than the viewport */
+img, video { max-width: 100%; }
+body { overflow-x: hidden; }
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 300;
+  line-height: 1.18;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+h1 em, h2 em, .feature-tagline em { font-style: italic; color: var(--rose); }
+
+p { font-size: 0.95rem; color: var(--ink-mid); margin-bottom: 1rem; font-weight: 300; line-height: 1.85; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+ul { list-style: none; }
+strong { font-weight: 500; color: var(--ink); }
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--ink);
+  color: var(--cream);
+  padding: 0.75em 1.25em;
+  z-index: 200;
+}
+.skip-link:focus { left: 1em; top: 1em; }
+
+.section-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+.eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--ink-light);
+  margin-bottom: 0.9em;
+  display: block;
+}
+
+.section { padding: 6rem 0; }
+.section:nth-of-type(even) { background: var(--cream-dark); }
+#research { background: var(--rose-light); }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.85em 1.7em;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.btn-primary {
+  background: var(--ink);
+  color: var(--cream);
+  border: 1px solid var(--ink);
+}
+.btn-primary:hover { background: var(--accent); border-color: var(--accent); }
+.btn-ghost {
+  border: 1px solid var(--border-dark);
+  color: var(--ink);
+}
+.btn-ghost:hover { border-color: var(--ink); background: var(--white); }
+
+/* ---------- Nav ---------- */
+.nav {
+  background: var(--cream);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 62px;
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+}
+.nav-links a:not(.nav-cta) {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--ink-mid);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: color 0.2s;
+}
+.nav-links a:not(.nav-cta):hover { color: var(--ink); border-bottom-color: var(--ink); }
+.nav-cta {
+  background: var(--ink);
+  color: var(--cream) !important;
+  padding: 0.55em 1.3em;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.nav-cta:hover { background: var(--accent); }
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.nav-toggle span { display: block; height: 1px; background: var(--ink); }
+
+/* ---------- Hero ---------- */
+.hero { position: relative; padding: 7rem 0 8rem; overflow: hidden; }
+.hero-inner { position: relative; z-index: 2; max-width: 720px; margin: 0 auto; padding: 0 2.5rem; text-align: center; }
+.hero .eyebrow { text-align: center; }
+.hero h1 { font-size: clamp(2.6rem, 6vw, 4.2rem); min-height: 1.2em; }
+.typewriter-cursor {
+  display: inline-block;
+  width: 3px;
+  margin-left: 2px;
+  background: var(--rose);
+  animation: blink 0.85s steps(1) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+.hero-tagline {
+  font-family: 'DM Sans', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ink-mid);
+  margin: 0 auto 2.5rem;
+}
+.hero-value {
+  font-family: 'Playfair Display', serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--rose);
+  line-height: 1.6;
+  margin: 1.5rem 0;
+}
+.hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.about-actions { margin-top: 2rem; }
+
+/* ---------- Scrapbook border (hero decoration) ---------- */
+.scrapbook {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+.scrap {
+  position: absolute;
+  width: 130px;
+  aspect-ratio: 4 / 5;
+  background: var(--white);
+  padding: 8px 8px 20px;
+  box-shadow: 0 10px 24px rgba(30, 28, 26, 0.14);
+  opacity: 0;
+  animation: scrapIn 0.7s ease-out forwards;
+}
+.scrap::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  width: 46px;
+  height: 18px;
+  background: var(--blush);
+  opacity: 0.85;
+  transform: translateX(-50%) rotate(-4deg);
+}
+.scrap .placeholder-img,
+.scrap img { width: 100%; height: 100%; }
+
+.scrap-1  { top: 6%;  left: 4%;   transform: rotate(-9deg); animation-delay: 0.10s; }
+.scrap-2  { top: 7%;  right: 5%;  transform: rotate(7deg);  animation-delay: 0.20s; }
+.scrap-3  { top: 38%; left: 2%;   transform: rotate(6deg);  animation-delay: 0.30s; }
+.scrap-4  { top: 40%; right: 2%;  transform: rotate(-6deg); animation-delay: 0.40s; }
+.scrap-5  { top: 66%; left: 8%;   transform: rotate(-4deg); animation-delay: 0.50s; }
+.scrap-6  { top: 68%; right: 8%;  transform: rotate(5deg);  animation-delay: 0.60s; }
+.scrap-7  { top: 62%; left: 22%;  transform: rotate(-3deg); animation-delay: 0.70s; }
+.scrap-8  { top: 64%; right: 23%; transform: rotate(4deg);  animation-delay: 0.80s; }
+
+@keyframes scrapIn {
+  from { opacity: 0; transform: translateY(24px) scale(0.85) rotate(var(--r, 0deg)); }
+  to   { opacity: 1; }
+}
+.scrap-1 { --r: -9deg; } .scrap-2 { --r: 7deg; } .scrap-3 { --r: 6deg; }
+.scrap-4 { --r: -6deg; } .scrap-5 { --r: -4deg; } .scrap-6 { --r: 5deg; }
+.scrap-7 { --r: -3deg; } .scrap-8 { --r: 4deg; }
+
+@media (max-width: 1250px) { .scrap-7, .scrap-8 { display: none; } }
+@media (max-width: 1100px) { .scrapbook { display: none; } }
+
+/* ---------- Scroll-next arrow ---------- */
+.scroll-next {
+  position: absolute;
+  bottom: 1.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border-dark);
+  background: var(--white);
+  color: var(--ink-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  z-index: 3;
+  animation: floatArrow 2.2s ease-in-out infinite;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.scroll-next:hover { color: var(--ink); border-color: var(--ink); }
+@keyframes floatArrow {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+}
+.section { position: relative; }
+
+/* ---------- About ---------- */
+.about-grid { display: grid; grid-template-columns: 320px 1fr; gap: 4rem; align-items: start; }
+.about-media { aspect-ratio: 4 / 5; background: var(--cream-dark); border: 1px solid var(--border); overflow: hidden; }
+.about-text h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
+.quick-facts { margin-top: 1.75rem; display: flex; flex-direction: column; gap: 0.75rem; }
+.quick-facts li { font-size: 0.85rem; color: var(--ink-mid); border-top: 1px solid var(--border); padding-top: 0.75rem; }
+.quick-facts li span {
+  display: inline-block;
+  min-width: 130px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: var(--ink-light);
+}
+
+/* ---------- Featured Research ---------- */
+.feature-title { font-size: clamp(2rem, 4vw, 2.8rem); }
+.feature-tagline { font-family: 'Playfair Display', serif; font-weight: 300; font-size: 1.3rem; color: var(--ink); margin-bottom: 1.25rem; }
+.feature-lede { max-width: 640px; font-size: 1rem; color: var(--ink-mid); }
+.feature-cta-line { max-width: 640px; font-size: 0.9rem; color: var(--ink-mid); }
+.feature-cta-line a { color: var(--ink); border-bottom: 1px solid var(--rose); font-weight: 500; }
+.feature-cta-line a:hover { color: var(--rose); }
+
+.research-question {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--rose);
+  padding: 1.75rem 2rem;
+  margin: 2.5rem 0;
+}
+.research-question p:last-child { font-family: 'Playfair Display', serif; font-weight: 300; font-size: 1.3rem; margin: 0; color: var(--ink); }
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin: 2.5rem 0;
+}
+.stat { background: var(--white); padding: 2rem 1.6rem; }
+.stat-num { display: block; font-family: 'Playfair Display', serif; font-weight: 300; font-size: 3rem; color: var(--rose); line-height: 1; margin-bottom: 0.6rem; }
+.stat-label { font-size: 0.82rem; color: var(--ink-mid); line-height: 1.5; }
+
+.feature-media { aspect-ratio: 16 / 7; background: var(--cream-dark); overflow: hidden; margin: 0; }
+.feature-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 3rem; }
+
+/* ---------- Covers pills ---------- */
+.covers-block { margin: 2.5rem 0; }
+.covers-pills { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.5rem; }
+.covers-pills li {
+  border: 1px solid var(--border-dark);
+  border-radius: 999px;
+  padding: 0.5rem 1.1rem;
+  font-size: 0.8rem;
+  color: var(--ink-mid);
+}
+
+/* ---------- Mini blocks (Basics / Findings / Strategy / Conclusion) ---------- */
+.mini-block { margin: 4rem 0; padding-top: 3rem; border-top: 1px solid var(--border); }
+.mini-block h3 { font-size: 1.5rem; margin-bottom: 0.75rem; }
+.mini-block > p { max-width: 680px; }
+
+/* ---------- Market Research (product audit) ---------- */
+.market-research { padding-top: 0; border-top: none; margin-top: 2.5rem; }
+.market-research h3 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
+
+.audit-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin: 2rem 0;
+}
+.audit-row {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr 1.4fr;
+  gap: 1px;
+  background: var(--border);
+}
+.audit-row span {
+  background: var(--white);
+  padding: 0.6rem 0.9rem;
+  font-size: 0.76rem;
+  color: var(--ink-mid);
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+}
+.audit-row span strong {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  color: var(--rose);
+  font-size: 0.95rem;
+  margin-left: 0.5rem;
+  white-space: nowrap;
+}
+.audit-row-head span {
+  background: var(--cream-dark);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+}
+
+.audit-chart-block { margin: 1.75rem 0; max-width: 560px; padding: 1rem; }
+.audit-chart { width: 100%; height: auto; display: block; }
+
+.pillars-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 1.5rem; }
+.pillars-row li { background: var(--white); padding: 1.4rem 1.3rem; font-size: 0.85rem; color: var(--ink-mid); display: flex; flex-direction: column; gap: 0.3rem; }
+.pillars-row strong { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 1.05rem; color: var(--ink); }
+
+.stat-grid-8 { grid-template-columns: repeat(4, 1fr); }
+.stat-grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+.chart-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2.5rem 0; }
+.chart-block { background: var(--white); border: 1px solid var(--border); padding: 1.5rem; }
+.chart-title { font-family: 'DM Sans', sans-serif; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 1rem; }
+.chart-block .feature-media { aspect-ratio: 16 / 10; }
+
+.quote-block { border-left: 3px solid var(--rose); padding: 0.25rem 0 0.25rem 1.5rem; margin: 2.5rem 0; }
+.quote-block p { font-family: 'Playfair Display', serif; font-weight: 300; font-style: italic; font-size: 1.2rem; color: var(--ink); margin-bottom: 0.5rem; }
+.quote-block cite { font-family: 'DM Sans', sans-serif; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-light); }
+
+.transition-line {
+  font-family: 'Playfair Display', serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--rose);
+  text-align: center;
+  margin: 2.5rem 0 0;
+}
+
+/* ---------- Strategy (Brilliant) ---------- */
+.strategy-title { font-size: clamp(1.8rem, 3.5vw, 2.4rem); margin-bottom: 0.3rem; }
+.strategy-block .work-link { margin-top: 0.5rem; }
+.labeled-grid { margin-top: 3rem; }
+
+.mini-thumbs { display: flex; gap: 0.5rem; margin-top: 1.2rem; }
+.mini-thumbs img {
+  flex: 1 1 0;
+  min-width: 0; /* without this, real images refuse to shrink and overflow the page */
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.work-media-phone { aspect-ratio: 9 / 14; max-width: 220px; margin: 0 auto; }
+
+/* Logo lockup: contain rather than crop, so the wordmark reads in full */
+.work-media-logo { aspect-ratio: 16 / 10; background: var(--white); display: flex; align-items: center; justify-content: center; padding: 1.5rem; }
+.work-media-logo img { width: 100%; height: 100%; object-fit: contain; }
+
+/* Posters, brochures and portrait graphics: show the whole thing instead of
+   cropping the title off. Used wherever the source art is not a landscape photo. */
+.work-media-contain { aspect-ratio: 4 / 3; background: var(--cream-dark); display: flex; align-items: center; justify-content: center; padding: 1rem; }
+.work-media-contain img { width: 100%; height: 100%; object-fit: contain; }
+
+/* ---------- Phone carousel (Instagram posts in a device frame) ---------- */
+.phone-carousel { margin: 1.75rem 0 0; }
+.phone-stage { position: relative; display: flex; align-items: center; justify-content: center; gap: 0.75rem; }
+.phone-frame {
+  position: relative;
+  width: 260px;
+  flex: 0 0 260px;
+  aspect-ratio: 9 / 19;
+  background: var(--ink);
+  border-radius: 30px;
+  padding: 9px;
+  box-shadow: 0 14px 34px rgba(30, 28, 26, 0.22);
+}
+.phone-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 22px;
+  overflow: hidden;
+  background: var(--white);
+}
+.phone-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  /* contain, so the full screenshot is visible: no cropped handles or like counts */
+  object-fit: contain;
+  object-position: center;
+  background: var(--white);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.phone-slide.is-active { opacity: 1; }
+.phone-notch {
+  position: absolute;
+  top: 9px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 74px;
+  height: 18px;
+  background: var(--ink);
+  border-radius: 0 0 12px 12px;
+  z-index: 2;
+}
+.phone-nav {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  border-radius: 50%;
+  border: 1px solid var(--border-dark);
+  background: var(--white);
+  color: var(--ink);
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s ease;
+}
+.phone-nav:hover { border-color: var(--ink); }
+.phone-dots { display: flex; justify-content: center; gap: 6px; margin-top: 1rem; }
+.phone-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--border-dark); border: none; padding: 0; cursor: pointer; }
+.phone-dot.is-active { background: var(--rose); }
+.phone-caption {
+  max-width: 520px;
+  margin: 1.1rem auto 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--ink-mid);
+  line-height: 1.6;
+  min-height: 5.5em;
+}
+.phone-caption .phone-handle { font-weight: 500; color: var(--ink); }
+.phone-caption .phone-stat { display: block; margin-top: 0.5rem; font-family: 'DM Sans', sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-light); }
+
+.influencer-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 0.5rem; }
+.influencer-list li { font-size: 0.88rem; color: var(--ink-mid); line-height: 1.7; }
+.influencer-list strong { color: var(--ink); }
+
+.conclusion-block { text-align: center; }
+.conclusion-block h3 { font-size: clamp(1.6rem, 3vw, 2.2rem); max-width: 780px; margin: 0 auto 1rem; }
+.conclusion-block > p { max-width: 680px; margin: 0 auto 2rem; }
+.conclusion-block .stat-grid { text-align: left; grid-template-columns: repeat(3, 1fr); }
+
+/* Launch Strategy card closes out the labeled grid cleanly */
+.labeled-grid .work-card:last-child { grid-column: 1 / -1; }
+
+/* ---------- Work grid ---------- */
+.work-grid, .passion-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 2.5rem; }
+.work-card, .passion-card { background: var(--white); display: flex; flex-direction: column; }
+/* Card hero images. Default is "contain" on a soft mat so posters, brochures and
+   portrait graphics are always fully visible and centered, never cropped through
+   their own titles. Add .work-media-cover on a card whose art is a true landscape
+   photo and should fill the frame edge to edge. */
+.work-media {
+  aspect-ratio: 16 / 10;
+  background: var(--cream-dark);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.work-media > img { width: 100%; height: 100%; object-fit: contain; object-position: center; }
+.work-media-cover > img { object-fit: cover; }
+.work-body { padding: 2rem 2rem 2.25rem; }
+.work-tag { font-family: 'DM Sans', sans-serif; text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.65rem; font-weight: 500; color: var(--ink-light); margin-bottom: 0.9rem; }
+.work-body h3 { font-size: 1.25rem; font-weight: 400; margin-bottom: 0.6rem; }
+.work-body p { color: var(--ink-mid); font-size: 0.9rem; }
+.work-stats { display: flex; flex-wrap: wrap; gap: 0.5rem 1.75rem; margin: 1.25rem 0 0.5rem; }
+.work-stats li { font-size: 0.82rem; color: var(--ink-mid); }
+.work-stats strong { display: block; font-family: 'Playfair Display', serif; font-weight: 300; font-size: 1.3rem; color: var(--rose); }
+.work-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  border-bottom: 1px solid var(--rose);
+  padding-bottom: 2px;
+}
+.reel-links { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1.1rem; }
+.reel-links a { font-size: 0.82rem; color: var(--ink-mid); border-bottom: 1px solid transparent; }
+.reel-links a:hover { color: var(--ink); border-bottom-color: var(--rose); }
+
+.passion-card-more { align-items: center; justify-content: center; text-align: center; background: var(--cream-dark); }
+.passion-card-more .work-body { padding: 3rem 2rem; }
+/* Small italic line introducing a set of images below a description */
+.media-note {
+  font-size: 0.82rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: 0.75rem;
+}
+
+/* Research block headings: these carry the section on their own now that the
+   descriptive subtitles under them are gone, so they read as real titles. */
+.block-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 300;
+  font-size: 2.1rem;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+
+.passions-lede { max-width: 620px; color: var(--ink-mid); font-size: 1rem; }
+.passions-lede + .passions-lede { margin-top: 0.75rem; }
+
+.experience-row { grid-template-columns: repeat(2, 1fr); margin-bottom: 2.5rem; }
+
+.link-stack { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1rem; }
+.link-stack .work-link { margin-top: 0; }
+
+/* ---------- Gallery strips (visual evidence under cards) ---------- */
+.gallery-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-top: 1.25rem;
+}
+.gallery-strip img {
+  width: 100%;
+  min-width: 0;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background: var(--cream-dark);
+  border-radius: 2px;
+}
+.gallery-strip-2 { grid-template-columns: repeat(2, 1fr); }
+
+/* Seven images in a three-column strip would leave an orphan, so the last one
+   runs the full width as a closing banner instead. */
+.strip-span-last img:last-child { grid-column: 1 / -1; aspect-ratio: 16 / 6; }
+
+/* Square frames, but the whole image inside them: the source art here is a mix of
+   16:9 and portrait, so cropping to a square was cutting off headlines and edges. */
+.gallery-strip.strip-whole img,
+.mini-thumbs.thumbs-whole img {
+  object-fit: contain;
+  background: var(--cream-dark);
+  padding: 4px;
+}
+.strategy-block .gallery-strip { grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 2rem 0 0; }
+.strategy-block .gallery-strip img { aspect-ratio: 4 / 5; }
+
+.reel-heading {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  margin-top: 1.4rem;
+}
+.reel-links strong { font-family: 'Playfair Display', serif; font-weight: 400; color: var(--rose); margin-right: 0.4rem; }
+.reel-note { display: block; font-size: 0.72rem; color: var(--ink-light); }
+
+/* ---------- Experience cards (wellness / fashion / side business) ---------- */
+.experience-cards {
+  /* A grid would force every card in a row to share the tallest one's row height,
+     which left a large empty void under the short travel card. CSS columns pack
+     the cards vertically instead, so each one only takes the height it needs. */
+  columns: 2;
+  column-gap: 1.5rem;
+  margin: 2rem 0 3rem;
+}
+.experience-cards .passion-card {
+  border: 1px solid var(--border);
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+.experience-cards .passion-card { background: var(--white); }
+.experience-cards .work-media { aspect-ratio: 4 / 5; }
+/* a landscape hero photo gets a landscape frame instead of a portrait one with mats */
+.experience-cards .work-media-wide { aspect-ratio: 3 / 2; }
+.work-media-tall { background: var(--ink); }
+.work-media-tall video { width: 100%; height: 100%; object-fit: cover; }
+.mini-video-row { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 0.75rem; }
+.mini-video-row video { width: 100%; aspect-ratio: 9 / 16; border-radius: 2px; }
+
+/* ---------- Agency Habitat ---------- */
+.habitat-intro { display: grid; grid-template-columns: 220px 1fr; gap: 2.5rem; align-items: start; margin: 2rem 0 3rem; }
+.habitat-photo { aspect-ratio: 2 / 3; background: var(--cream-dark); border: 1px solid var(--border); overflow: hidden; }
+.habitat-intro-text p { margin-bottom: 1rem; }
+.habitat-intro-text p:last-child { margin-bottom: 0; }
+
+.carousel-group { margin: 2.75rem 0; }
+.carousel-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  margin-bottom: 1rem;
+}
+.carousel { position: relative; }
+.carousel-track {
+  display: flex;
+  gap: 1.1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.4rem;
+  scrollbar-width: thin;
+}
+.carousel-item { flex: 0 0 190px; scroll-snap-align: start; }
+.carousel-media {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  background: var(--ink);
+  border-radius: 2px;
+  display: block;
+  object-fit: cover;
+}
+.carousel-caption { font-size: 0.8rem; color: var(--ink-mid); line-height: 1.5; margin-top: 0.7rem; }
+.carousel-caption a { color: var(--ink); border-bottom: 1px solid var(--rose); font-weight: 500; white-space: nowrap; }
+.carousel-caption a:hover { color: var(--rose); }
+
+.carousel-btn {
+  position: absolute;
+  top: 84px;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--border-dark);
+  background: var(--white);
+  color: var(--ink);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(30, 28, 26, 0.12);
+}
+.carousel-btn:hover { border-color: var(--ink); }
+.carousel-btn-prev { left: -16px; }
+.carousel-btn-next { right: -16px; }
+
+/* ---------- Writing ---------- */
+.writing-list { display: flex; flex-direction: column; margin-top: 2rem; }
+.writing-list li { border-top: 1px solid var(--border); }
+.writing-list li:last-child { border-bottom: 1px solid var(--border); }
+.writing-list a { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.3em 1em; padding: 1.5em 0.2em; }
+.writing-list a:hover .writing-title { color: var(--rose); }
+.writing-title { font-family: 'Playfair Display', serif; font-weight: 300; font-size: 1.1rem; transition: color 0.2s; }
+.writing-outlet { font-family: 'DM Sans', sans-serif; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-light); }
+
+/* ---------- Contact ---------- */
+.contact-inner { text-align: center; }
+.contact-sub { color: var(--ink-mid); max-width: 480px; margin: 0 auto 2.5rem; }
+.contact-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+/* ---------- Footer ---------- */
+.site-footer { border-top: 1px solid var(--border); padding: 2.5rem; background: var(--cream-dark); }
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+}
+.footer-inner a:hover { color: var(--ink); }
+
+/* ---------- Placeholder images ---------- */
+.img-fill { width: 100%; height: 100%; object-fit: cover; }
+.placeholder-img.missing {
+  position: relative;
+  visibility: hidden; /* hides the browser's own broken-image icon */
+}
+.placeholder-img.missing::after {
+  visibility: visible;
+  content: attr(data-label);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1em;
+  background: var(--cream-dark);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-light);
+}
+.scrap .placeholder-img.missing::after { background: var(--cream-mid); font-size: 0.62rem; padding: 0.5em; }
+.about-media .placeholder-img.missing::after { background: var(--white); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .about-media { max-width: 280px; }
+  .stat-grid, .stat-grid-8 { grid-template-columns: repeat(2, 1fr); }
+  .work-grid, .passion-grid, .labeled-grid, .chart-row, .pillars-row { grid-template-columns: 1fr; }
+  /* three data points stay side by side; 2 + 1 orphan reads as a broken grid */
+  .conclusion-block .stat-grid { grid-template-columns: repeat(3, 1fr); }
+  .audit-row { grid-template-columns: 1fr 1fr 1fr; }
+  .audit-row span { padding: 0.85rem 0.9rem; font-size: 0.76rem; }
+  .habitat-intro { grid-template-columns: 1fr; }
+  .habitat-photo { max-width: 220px; }
+  .experience-cards { columns: 1; }
+  .strategy-block .gallery-strip { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .section { padding: 4rem 0; }
+  .section-inner, .nav-inner { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--cream);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 0.5rem 1.5rem 1.25rem;
+    border-bottom: 1px solid var(--border);
+    display: none;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 0.75rem 0; width: 100%; }
+  .nav-toggle { display: flex; }
+  .stat-grid, .stat-grid-8 { grid-template-columns: 1fr 1fr; }
+  .stat-grid-3 { grid-template-columns: 1fr; }
+  .covers-pills li { font-size: 0.75rem; }
+  .footer-inner { flex-direction: column; gap: 0.5em; text-align: center; }
+  .audit-row { grid-template-columns: 1fr; }
+  .audit-row span { justify-content: space-between; }
+  .audit-row-head { display: none; }
+  .carousel-item { flex-basis: 148px; }
+  .carousel-btn { display: none; }
+  /* The phone frame plus its two arrows needs 360px, which is wider than a
+     phone screen once the section and card padding are taken out. Shrink both. */
+  .stacked-grid .work-card > .work-body { padding: 1.5rem; }
+  .phone-frame { width: 190px; flex: 0 0 190px; }
+  .phone-stage { gap: 0.35rem; }
+  .phone-nav { width: 30px; height: 30px; font-size: 0.9rem; }
+}
+
+.gallery-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  margin-top: 1.5rem;
+}
+
+
+/* ---------- Section lede + internship grouping ---------- */
+.section-lede { max-width: 640px; color: var(--ink-mid); font-size: 1rem; margin-bottom: 2.5rem; }
+.habitat-name { font-family: 'Playfair Display', serif; font-size: 1.6rem; margin-bottom: 0.3rem; }
+.internship-grid { margin-top: 3.5rem; }
+
+.habitat-photo-wrap { margin: 0; }
+.photo-caption {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--ink-light);
+  text-align: center;
+  margin-top: 0.7rem;
+}
+
+
+/* Idle drift: applied by script.js after the entrance animation settles */
+@keyframes scrapFloat {
+  0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
+  50%      { transform: translateY(-9px) rotate(calc(var(--r, 0deg) + 1.2deg)); }
+}
+.scrap.is-floating {
+  /* this replaces the scrapIn entrance animation, which was what held opacity at 1,
+     so pin opacity here or the polaroid falls back to the base opacity: 0 */
+  opacity: 1;
+  animation: scrapFloat var(--float-dur, 7s) ease-in-out var(--float-delay, 0s) infinite;
+}
+@media (prefers-reduced-motion: reduce) { .scrap.is-floating { animation: none; } }
+
+/* ---------- Research charts + survey aside ---------- */
+/* align-items:start so the shorter chart keeps its own height instead of
+   stretching to match its neighbour and leaving white space under the image */
+.chart-stack { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; align-items: start; }
+.chart-figure { margin: 0; background: var(--white); border: 1px solid var(--border); padding: 1rem; }
+.chart-figure img { width: 100%; height: auto; display: block; }
+.chart-figure svg { width: 100%; height: auto; display: block; }
+.chart-figure figcaption strong { color: var(--ink); font-weight: 500; }
+.chart-figure figcaption { font-size: 0.78rem; color: var(--ink-mid); line-height: 1.5; margin-top: 0.75rem; }
+.survey-aside {
+  max-width: 680px;
+  font-size: 0.85rem;
+  color: var(--ink-mid);
+  border-left: 2px solid var(--rose);
+  padding-left: 1.1rem;
+  margin: 1.75rem 0 0;
+}
+.survey-aside em { font-style: italic; color: var(--ink); }
+@media (max-width: 900px) { .chart-stack { grid-template-columns: 1fr; } }
+
+/* School Work: same masonry treatment as the other card grids, so a short card
+   ends where its content ends instead of stretching to its neighbour's height */
+#school .work-grid {
+  display: block;
+  columns: 2;
+  column-gap: 1.5rem;
+  background: none;
+  border: none;
+}
+#school .work-grid .work-card {
+  display: inline-block;
+  width: 100%;
+  border: 1px solid var(--border);
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  margin-bottom: 1.5rem;
+}
+@media (max-width: 900px) { #school .work-grid { columns: 1; } }
+
+/* ---------- Brilliant brand intro ---------- */
+.brand-intro { display: flex; align-items: center; gap: 1.25rem; margin-bottom: 1rem; }
+.brand-mark {
+  /* the source art is mostly empty margin, so this uses a tightly cropped
+     version at a size where the wordmark is actually legible */
+  width: 250px;
+  flex: 0 0 250px;
+  height: auto;
+}
+.brand-intro h3 { margin-bottom: 0.2rem; }
+.brand-intro .hero-value { margin: 0; font-size: 1rem; }
+
+/* A small illustrative example, not a hero image */
+.tiny-example {
+  width: 150px;
+  height: auto;
+  margin-top: 1rem;
+  border: 1px solid var(--border);
+}
+@media (max-width: 640px) { .brand-intro { flex-direction: column; align-items: flex-start; gap: 0.75rem; } }
+
+
+/* Three-up stat rows: tighter so all three sit on one line, stacking only on phones */
+.stat-grid-3 .stat, .conclusion-block .stat { padding: 1.5rem 1.1rem; }
+.stat-grid-3 .stat-num, .conclusion-block .stat-num { font-size: 2.1rem; }
+@media (max-width: 640px) {
+  .stat-grid-3, .conclusion-block .stat-grid { grid-template-columns: 1fr; }
+}
+
+/* Widescreen slides (case study decks, brand boards) shown at their real ratio
+   instead of being cropped into squares by the default gallery rule */
+.gallery-strip-wide img { aspect-ratio: 16 / 9; }
+
+/* Favorites: one card per row so the phone carousel and the brochure get real space */
+.stacked-grid { grid-template-columns: 1fr; }
+.stacked-grid .work-card { display: grid; grid-template-columns: 1fr 1fr; }
+.stacked-grid .work-card > .work-body { padding: 2.5rem; }
+.stacked-grid .work-card > .work-media { height: 100%; aspect-ratio: auto; min-height: 420px; }
+/* the Chi Omega card is body-only (its visual is the phone carousel), so let it span */
+.stacked-grid .work-card:not(:has(> .work-media)) { grid-template-columns: 1fr; }
+@media (max-width: 900px) {
+  .stacked-grid .work-card { grid-template-columns: 1fr; }
+  .stacked-grid .work-card > .work-media { min-height: 0; aspect-ratio: 16 / 10; }
+}
+
+/* A phone slide can be a video as well as an image */
+video.phone-slide { object-fit: cover; background: var(--ink); }
+
+/* ---------- Video showcase (Passion Projects) ----------
+   Reels get presented as real work with a label, rather than small players
+   tucked under the paragraph. */
+.video-showcase {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+.video-tile {
+  margin: 0;
+  /* shrinkable so a row of three still fits the card instead of wrapping */
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 190px;
+}
+.video-tile video {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  display: block;
+  background: var(--ink);
+  border-radius: 3px;
+  box-shadow: 0 8px 20px rgba(30, 28, 26, 0.14);
+}
+.video-tile figcaption {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  margin-top: 0.6rem;
+}
+@media (max-width: 640px) { .video-tile { max-width: 150px; } }
+
+/* ---------- About: fit the section in one screen ----------
+   Quick facts move under the headshot so the two columns balance and the
+   next-section arrow stays visible without scrolling. */
+.about-side { display: flex; flex-direction: column; gap: 1.5rem; }
+.about-side .quick-facts { margin-top: 0; }
+.about-side .quick-facts li { padding: 0.55rem 0 0; font-size: 0.8rem; line-height: 1.5; }
+/* In this narrow column an inline label leaves too little room for the value,
+   so the text wraps back underneath it. Stack them instead. */
+.about-side .quick-facts li span {
+  display: block;
+  min-width: 0;
+  margin-bottom: 0.15rem;
+}
+#about.section { padding: 3rem 0 4rem; }
+#about .about-text > p { margin-bottom: 0.85rem; }
+#about .hero-value { margin: 1.1rem 0; }
+@media (max-width: 900px) {
+  #about.section { padding: 4rem 0; }
+  .about-side { max-width: 280px; }
+}
+
+/* ---------- Brilliant marketing plan ---------- */
+.plan-block { margin-top: 2.5rem; }
+.plan-block h3 { font-size: 1.3rem; margin-bottom: 0.4rem; }
+.plan-block > p { max-width: 620px; margin-bottom: 1.25rem; }
+.plan-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+.plan-grid li {
+  background: var(--white);
+  padding: 1.1rem 1.2rem;
+  font-size: 0.8rem;
+  color: var(--ink-mid);
+  line-height: 1.6;
+}
+.plan-grid strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+}
+
+/* These two cards read as a matched pair, so they share a height. The solo grid
+   below is a single card and keeps sizing to its own content. */
+.labeled-grid { align-items: stretch; gap: 1.25rem; background: none; border: none; grid-template-columns: repeat(2, 1fr); }
+.solo-grid { align-items: start; }
+.labeled-grid .work-card { border: 1px solid var(--border); }
+.labeled-grid .work-card:last-child { grid-column: auto; }
+
+/* ---------- Research section: tighter overall ---------- */
+#research .mini-block { margin: 2.25rem 0; padding-top: 2rem; }
+#research .mini-block h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+#research .stat-grid { margin: 1.5rem 0; }
+#research .stat { padding: 1.25rem 1.1rem; }
+#research .stat-num { font-size: 1.9rem; margin-bottom: 0.35rem; }
+#research .stat-label { font-size: 0.76rem; line-height: 1.45; }
+#research .covers-block { margin: 1.5rem 0; }
+#research .pillars-row li { padding: 1rem 1.1rem; }
+#research .work-card .work-body { padding: 1.4rem; }
+#research .feature-actions { margin-top: 2rem; justify-content: center; }
+@media (max-width: 900px) { .plan-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px) { .plan-grid { grid-template-columns: 1fr; } }
+
+/* ---------- Internships: tighter so the section reads faster ---------- */
+#internships .habitat-intro { margin: 1.5rem 0 2rem; gap: 2rem; }
+#internships .carousel-group { margin: 1.75rem 0; }
+#internships .carousel-label { margin-bottom: 0.7rem; }
+#internships .section-lede { margin-bottom: 1.75rem; }
+#internships .internship-grid { margin-top: 2.25rem; }
+
+/* These four cards vary a lot in height (one carries a reel, one a coverage pair),
+   and the shared-gap grid was leaving a tall white void under the shortest one.
+   Masonry columns with real per-card borders let each card end where it ends. */
+.internship-grid {
+  display: block;
+  columns: 2;
+  column-gap: 1.5rem;
+  background: none;
+  border: none;
+}
+.internship-grid .work-card {
+  display: inline-block;
+  width: 100%;
+  border: 1px solid var(--border);
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  margin-bottom: 1.5rem;
+}
+@media (max-width: 900px) { .internship-grid { columns: 1; } }
+#internships .work-card .work-body { padding: 1.5rem; }
+
+/* ---------- Client grouping ---------- */
+.client-group-label {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  color: var(--ink);
+  margin: 2.5rem 0 0.25rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+.carousel-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; }
+.carousel-pair .carousel-group { margin: 1.25rem 0 0; }
+
+/* When a track has fewer items than fit, centre them and drop the arrows
+   (added by script.js) rather than leaving a lopsided row with dead space. */
+/* Keep overflow:auto here. Setting it to visible let a static track grow to its
+   content width, which pushed the whole page sideways on a phone. */
+.carousel.is-static .carousel-track { justify-content: center; }
+/* Grid and flex children default to min-width:auto and refuse to shrink below
+   their content, so pin them to 0 or a wide track drags the page with it. */
+.carousel-pair > *, .carousel-group, .carousel, .carousel-track { min-width: 0; }
+.carousel.is-static .carousel-btn { display: none; }
+@media (max-width: 900px) { .carousel-pair { grid-template-columns: 1fr; gap: 0; } }
+.group-note { font-size: 0.85rem; color: var(--ink-mid); margin: 0.6rem 0 0; max-width: 620px; }
+
+/* Roxo press moment: the newspaper sits on its own with its story beside it */
+/* Roxo: brochure beside the intro copy, so neither column stretches to fill the other */
+.roxo-lead { display: grid; grid-template-columns: 260px 1fr; gap: 2rem; align-items: center; margin: 1.25rem 0 1.75rem; max-width: 860px; }
+.roxo-brochure { margin: 0; }
+.roxo-brochure img { width: 100%; height: auto; display: block; border: 1px solid var(--border); background: var(--cream-dark); }
+.roxo-brochure figcaption { font-size: 0.75rem; color: var(--ink-light); font-style: italic; margin-top: 0.5rem; }
+.roxo-lead p { margin-top: 0; }
+@media (max-width: 720px) { .roxo-lead { grid-template-columns: 1fr; } .roxo-brochure { max-width: 260px; } }
+
+/* Two pieces of coverage side by side: a wide clip board and a tall screenshot,
+   each at its own proportions rather than forced into a shared frame */
+.press-pair { display: grid; grid-template-columns: 1.35fr 1fr; gap: 1rem; align-items: start; margin-top: 0.75rem; }
+.press-pair figure { margin: 0; min-width: 0; }
+.press-pair img { width: 100%; height: auto; display: block; border: 1px solid var(--border); border-radius: 2px; }
+.press-pair figcaption { font-size: 0.72rem; line-height: 1.5; color: var(--ink-light); margin-top: 0.45rem; }
+@media (max-width: 640px) { .press-pair { grid-template-columns: 1fr; } }
+
+/* One reel on its own, centred rather than stretched across the card */
+.video-showcase-solo { justify-content: center; }
+.video-showcase-solo .video-tile { max-width: 230px; }
+.video-showcase-solo figcaption { text-align: center; }
+
+/* A single wide photo shown full-bleed inside a card body */
+.wide-photo { margin: 1rem 0 0; }
+.wide-photo img { width: 100%; height: auto; display: block; border: 1px solid var(--border); border-radius: 2px; }
+.wide-photo figcaption { font-size: 0.78rem; color: var(--ink-light); font-style: italic; margin-top: 0.5rem; }
+
+/* Short link line under a carousel */
+.insta-line { font-size: 0.85rem; color: var(--ink-mid); margin: 0.9rem 0 0; }
+.insta-line a { color: var(--ink); border-bottom: 1px solid var(--border-dark); }
+
+.roxo-press { display: grid; grid-template-columns: 300px 1fr; gap: 2rem; align-items: center; margin-top: 1rem; max-width: 860px; }
+.roxo-press img { width: 100%; height: auto; border: 1px solid var(--border); }
+.roxo-press p { font-size: 0.85rem; margin: 0; }
+@media (max-width: 640px) { .roxo-press { grid-template-columns: 1fr; } .roxo-press img { max-width: 220px; } }
+.writing-note { font-size: 0.9rem; color: var(--ink-mid); margin: 0; }
+
+/* A single supporting photo shown large and centred, rather than squeezed
+   into a one-cell gallery grid */
+.feature-photo { margin: 1.5rem auto 0; max-width: 560px; }
+.feature-photo img { width: 100%; height: auto; display: block; border-radius: 2px; }
+
+/* Magazine covers: show the whole cover instead of cropping it into a square */
+.gallery-strip-covers img {
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+  background: var(--cream-dark);
+}
+
+/* Audit table and its chart read together, so sit them side by side */
+.audit-row-pair { display: grid; grid-template-columns: 1.25fr 1fr; gap: 1.75rem; align-items: start; margin: 2rem 0; }
+.audit-row-pair .audit-list { margin: 0; }
+.audit-row-pair .audit-chart-block { margin: 0; max-width: none; }
+@media (max-width: 1000px) { .audit-row-pair { grid-template-columns: 1fr; } }
+
+@media (max-width: 1000px) { .labeled-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 700px) { .labeled-grid { grid-template-columns: 1fr; } }
+
+.solo-grid { grid-template-columns: 1fr; }
+
+/* Label above the project-components pill row */
+.pills-label {
+  font-family: 'DM Sans', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--ink-light);
+  margin-bottom: 0.7rem;
+}
+
+/* A single closing stat sits centred rather than stranded in a three-column row */
+#research .conclusion-block .stat-grid-solo { grid-template-columns: 1fr; max-width: 460px; margin: 1.5rem auto 0; text-align: center; }
+
+/* Section-level eyebrows read as titles in their own right, so they are set
+   larger and darker than the small labels used inside cards and callouts. */
+.section-inner > .eyebrow,
+.about-text > .eyebrow {
+  font-size: 0.92rem;
+  letter-spacing: 0.2em;
+  color: var(--ink-mid);
+  margin-bottom: 1.1rem;
+}
+@media (max-width: 640px) {
+  .section-inner > .eyebrow,
+  .about-text > .eyebrow { font-size: 0.8rem; letter-spacing: 0.16em; }
+}
+
+/* A group with only one card gets a full-width, two-column card instead of a
+   single masonry column with an empty half beside it. */
+.internship-grid.single-card { columns: 1; }
+.internship-grid.single-card .work-card { display: grid; grid-template-columns: 1fr 1fr; margin-bottom: 0; }
+.internship-grid.single-card .work-card > .work-media { height: 100%; aspect-ratio: auto; min-height: 360px; }
+.internship-grid.single-card .work-card > .work-media > img { object-fit: cover; }
+@media (max-width: 900px) {
+  .internship-grid.single-card .work-card { grid-template-columns: 1fr; }
+  .internship-grid.single-card .work-card > .work-media { min-height: 0; aspect-ratio: 16 / 10; }
+}
+#internships .habitat-name { margin-top: 3.5rem; }
+
+/* Tighter rhythm between client groups in the internships section */
+#internships .client-group-label { margin: 1.4rem 0 0.2rem; }
+#internships .carousel-group { margin: 1rem 0 1.25rem; }
+#internships .carousel-pair { row-gap: 1rem; }
+#internships .insta-line { margin-top: 0.7rem; }
+#internships .group-note { margin-top: 0.4rem; }
+
+/* Email marketing has no image, so it runs the full width as a stats band above
+   the two visual cards rather than sitting in a column with an empty frame. */
+.internship-grid.stats-band { columns: 1; margin-bottom: 1.5rem; }
+.internship-grid.stats-band .work-card { display: block; margin-bottom: 0; }
+.internship-grid.stats-band .work-body { padding: 1.75rem 2rem; }
+.internship-grid.stats-band .work-body > p:not(.work-tag) { max-width: 68ch; }
+.internship-grid.stats-band .work-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+.internship-grid.stats-band .work-stats strong { font-size: 1.6rem; }
+@media (max-width: 700px) { .internship-grid.stats-band .work-stats { grid-template-columns: repeat(2, 1fr); } }
+
+/* Two cards balance badly in CSS columns (the shorter one does not reach the
+   balance target, so both land in column one). A real grid is correct here. */
+.internship-grid.two-up { display: grid; columns: auto; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start; }
+.internship-grid.two-up .work-card { display: flex; flex-direction: column; width: auto; margin-bottom: 0; }
+@media (max-width: 900px) { .internship-grid.two-up { grid-template-columns: 1fr; } }
+
+/* Roxo rows share one image column width and one text measure, so the three
+   blocks in the card line up instead of each finding its own edge. */
+
+@media (max-width: 720px) { .roxo-press { grid-template-columns: 1fr; align-items: start; } }
+
+/* Nav has eight items; tighten the spacing before it can push past the viewport
+   at in-between widths, rather than letting the page scroll sideways. */
+@media (max-width: 1080px) { .nav-links { gap: 1.5rem; } }
+@media (max-width: 960px) {
+  .nav-links { gap: 1.05rem; }
+  .nav-links a:not(.nav-cta) { font-size: 0.65rem; letter-spacing: 0.1em; }
+  .nav-cta { padding: 0.5em 1em; font-size: 0.64rem; letter-spacing: 0.1em; }
+}
+
+/* Conclusion was carrying a lot of air: question, paragraph, a boxed stat and a
+   button each on their own band. Tighten every gap and shrink the stat card. */
+#research .conclusion-block { margin-top: 1.5rem; padding-top: 1.75rem; }
+#research .conclusion-block h3 { font-size: clamp(1.4rem, 2.4vw, 1.8rem); margin-bottom: 0.6rem; }
+#research .conclusion-block > p { margin-bottom: 1.1rem; }
+#research .conclusion-block .stat-grid-solo { margin: 0 auto; max-width: 400px; }
+#research .conclusion-block .stat { padding: 1rem 1.1rem; }
+#research .conclusion-block .stat-num { font-size: 1.7rem; margin-bottom: 0.2rem; }
+#research .conclusion-block .stat-label { max-width: 34ch; margin: 0 auto; }
+#research .feature-actions { margin-top: 1.25rem; }
+
+/* ---------- Internships: company blocks ----------
+   Each of the three companies gets the same header, so the section reads with
+   the same hierarchy as the research section: big title, meta line, one note. */
+.company-head {
+  border-top: 1px solid var(--border-dark);
+  padding-top: 2rem;
+  margin: 3.25rem 0 1.5rem;
+}
+#internships .company-head:first-of-type { margin-top: 2.5rem; }
+.company-head .block-title { margin-bottom: 0.5rem; }
+.company-meta {
+  font-family: 'DM Sans', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--ink-light);
+  margin-bottom: 0.75rem;
+}
+.company-note { font-size: 0.9rem; color: var(--ink-mid); max-width: 70ch; margin-bottom: 0; }
+
+/* Same hairline stat grid the research section uses */
+.company-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin: 1.75rem 0 0;
+}
+.company-stats li {
+  background: var(--white);
+  padding: 1.25rem 1.1rem;
+  font-size: 0.78rem;
+  color: var(--ink-mid);
+  line-height: 1.45;
+}
+.company-stats strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-weight: 300;
+  font-size: 1.9rem;
+  color: var(--rose);
+  margin-bottom: 0.35rem;
+}
+@media (max-width: 760px) { .company-stats { grid-template-columns: 1fr; } }
+
+/* The logo was a JPEG on a white ground, so it read as a white box floating on
+   the pink section. It is now a transparent PNG, set to the right of the name. */
+.brand-intro { justify-content: space-between; gap: 2rem; max-width: 720px; }
+.brand-intro > div { order: 1; }
+.brand-mark { order: 2; width: 230px; flex: 0 0 230px; height: auto; background: none; }
+@media (max-width: 640px) {
+  .brand-intro { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .brand-intro > div { order: 2; }
+  .brand-mark { order: 1; width: 190px; flex: 0 0 auto; }
+}
+
+/* A single reel shown in the same phone frame the Chi Omega carousel uses,
+   with no arrows or dots since there is only one thing to see. */
+.phone-solo .phone-stage { justify-content: center; }
+.phone-solo .phone-caption { text-align: center; max-width: 30ch; margin-left: auto; margin-right: auto; }
+
+/* Influencer & partnerships: four phone-shaped pieces of evidence in a row */
+.influencer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; align-items: start; margin: 1.25rem 0 0; }
+.influencer-grid figure { margin: 0; min-width: 0; }
+.influencer-grid img,
+.influencer-grid video {
+  width: 100%;
+  aspect-ratio: 9 / 19.5;
+  object-fit: cover;
+  display: block;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--ink);
+}
+.influencer-grid figcaption { font-size: 0.74rem; line-height: 1.5; color: var(--ink-light); margin-top: 0.5rem; }
+@media (max-width: 900px) { .influencer-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .influencer-grid { grid-template-columns: 1fr; max-width: 260px; } }
+
+/* A short stack of document links under a card */
+.doc-links { margin-top: 0.9rem; display: grid; gap: 0.4rem; }
+.doc-links a {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  color: var(--ink);
+  border-bottom: 1px solid var(--border-dark);
+  padding-bottom: 1px;
+  transition: border-color 0.2s;
+}
+.doc-links a:hover { border-bottom-color: var(--ink); }
+.roxo-brochure figcaption a { color: var(--ink); border-bottom: 1px solid var(--border-dark); font-style: normal; }
